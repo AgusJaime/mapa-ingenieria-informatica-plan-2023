@@ -1,0 +1,733 @@
+[
+  {
+    "id": "3621",
+    "name": "Matemática Discreta",
+    "year": 1,
+    "semester": 1,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3622",
+    "name": "Análisis Matemático I",
+    "year": 1,
+    "semester": 1,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3623",
+    "name": "Programación Inicial",
+    "year": 1,
+    "semester": 1,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3624",
+    "name": "Introducción a los Sistemas de Información",
+    "year": 1,
+    "semester": 1,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3625",
+    "name": "Sistemas de Numeración",
+    "year": 1,
+    "semester": 1,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3626",
+    "name": "Principios de Calidad de Software",
+    "year": 1,
+    "semester": 1,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3627",
+    "name": "Álgebra y Geometría Analítica I",
+    "year": 1,
+    "semester": 2,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3628",
+    "name": "Física I",
+    "year": 1,
+    "semester": 2,
+    "correlatives": [
+      "3622"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3629",
+    "name": "Programación Estructurada Básica",
+    "year": 1,
+    "semester": 2,
+    "correlatives": [
+      "3623"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3630",
+    "name": "Introducción a la Gestión de Requisitos",
+    "year": 1,
+    "semester": 2,
+    "correlatives": [
+      "3624"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3631",
+    "name": "Fundamentos de Sistemas Embebidos",
+    "year": 1,
+    "semester": 2,
+    "correlatives": [
+      "3625"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3632",
+    "name": "Introducción a los Proyectos Informáticos",
+    "year": 1,
+    "semester": 2,
+    "correlatives": [],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3633",
+    "name": "Análisis Matemático II",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3622"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3634",
+    "name": "Física II",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3628"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3635",
+    "name": "Tópicos de Programación",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3621",
+      "3629"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3636",
+    "name": "Bases de Datos",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3621",
+      "3629"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3637",
+    "name": "Análisis de Sistemas",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3630"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3638",
+    "name": "Arquitectura de Computadoras",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3631"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3680",
+    "name": "Taller de Integración",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3621",
+      "3623",
+      "3624",
+      "3625",
+      "3626",
+      "3630",
+      "3632",
+      "3638",
+      "3635",
+      "3636"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3676",
+    "name": "Responsabilidad Social Universitaria",
+    "year": 2,
+    "semester": 3,
+    "correlatives": [
+      "3626"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3639",
+    "name": "Análisis Matemático III",
+    "year": 2,
+    "semester": 4,
+    "correlatives": [
+      "3633"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3640",
+    "name": "Algoritmos y Estructuras de Datos",
+    "year": 2,
+    "semester": 4,
+    "correlatives": [
+      "3635"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3641",
+    "name": "Bases de Datos Aplicada",
+    "year": 2,
+    "semester": 4,
+    "correlatives": [
+      "3636"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3642",
+    "name": "Principios de Diseño de Sistemas",
+    "year": 2,
+    "semester": 4,
+    "correlatives": [
+      "3626",
+      "3637"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3643",
+    "name": "Redes de Computadoras",
+    "year": 2,
+    "semester": 4,
+    "correlatives": [
+      "3638"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3644",
+    "name": "Gestión de las Organizaciones",
+    "year": 2,
+    "semester": 4,
+    "correlatives": [
+      "3632"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3645",
+    "name": "Álgebra y Geometría Analítica II",
+    "year": 3,
+    "semester": 5,
+    "correlatives": [
+      "3627"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3646",
+    "name": "Paradigmas de Programación",
+    "year": 3,
+    "semester": 5,
+    "correlatives": [
+      "3622",
+      "3640"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3647",
+    "name": "Requisitos Avanzados",
+    "year": 3,
+    "semester": 5,
+    "correlatives": [
+      "3642"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3648",
+    "name": "Diseño de Software",
+    "year": 3,
+    "semester": 5,
+    "correlatives": [
+      "3636",
+      "3642"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3649",
+    "name": "Sistemas Operativos",
+    "year": 3,
+    "semester": 5,
+    "correlatives": [
+      "3638"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3650",
+    "name": "Seguridad de la Información",
+    "year": 3,
+    "semester": 5,
+    "correlatives": [
+      "3635",
+      "3638",
+      "3643"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3651",
+    "name": "Probabilidad y Estadística",
+    "year": 3,
+    "semester": 6,
+    "correlatives": [
+      "3621",
+      "3639",
+      "3645"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3652",
+    "name": "Programación Avanzada",
+    "year": 3,
+    "semester": 6,
+    "correlatives": [
+      "3641",
+      "3646"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3653",
+    "name": "Arquitecturas de Sistemas Software",
+    "year": 3,
+    "semester": 6,
+    "correlatives": [
+      "3648"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3654",
+    "name": "Virtualización de Hardware",
+    "year": 3,
+    "semester": 6,
+    "correlatives": [
+      "3640",
+      "3645",
+      "3649"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3655",
+    "name": "Auditoría y Legislación",
+    "year": 3,
+    "semester": 6,
+    "correlatives": [
+      "3650"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3656",
+    "name": "Estadística Aplicada",
+    "year": 4,
+    "semester": 7,
+    "correlatives": [
+      "3641",
+      "3651"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3657",
+    "name": "Autómatas y Gramática",
+    "year": 4,
+    "semester": 7,
+    "correlatives": [
+      "3646"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3658",
+    "name": "Programación Concurrente",
+    "year": 4,
+    "semester": 7,
+    "correlatives": [
+      "3646",
+      "3649"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3659",
+    "name": "Gestión Aplicada al Desarrollo de Software I",
+    "year": 4,
+    "semester": 7,
+    "correlatives": [
+      "3644",
+      "3647",
+      "3648"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3660",
+    "name": "Sistemas Operativos Avanzados",
+    "year": 4,
+    "semester": 7,
+    "correlatives": [
+      "3654"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3661",
+    "name": "Gestión de Proyectos",
+    "year": 4,
+    "semester": 7,
+    "correlatives": [
+      "3644",
+      "3650",
+      "3651"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3662",
+    "name": "Matemática Aplicada",
+    "year": 4,
+    "semester": 8,
+    "correlatives": [
+      "3651"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3663",
+    "name": "Lenguajes y Compiladores",
+    "year": 4,
+    "semester": 8,
+    "correlatives": [
+      "3657"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3664",
+    "name": "Inteligencia Artificial",
+    "year": 4,
+    "semester": 8,
+    "correlatives": [
+      "3646",
+      "3651"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3665",
+    "name": "Gestión Aplicada al Desarrollo de Software II",
+    "year": 4,
+    "semester": 8,
+    "correlatives": [
+      "3653",
+      "3659"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3666",
+    "name": "Seguridad Aplicada y Forensia",
+    "year": 4,
+    "semester": 8,
+    "correlatives": [
+      "3649",
+      "3652",
+      "3655"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3667",
+    "name": "Gestión de la Calidad de Procesos de Sistemas",
+    "year": 4,
+    "semester": 8,
+    "correlatives": [
+      "3642",
+      "3661"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3668",
+    "name": "Inteligencia Artificial Aplicada",
+    "year": 5,
+    "semester": 9,
+    "correlatives": [
+      "3656",
+      "3664"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3669",
+    "name": "Ciencia de Datos",
+    "year": 5,
+    "semester": 9,
+    "correlatives": [
+      "3656",
+      "3664"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3670",
+    "name": "Innovación y Emprendedorismo",
+    "year": 5,
+    "semester": 9,
+    "correlatives": [
+      "3661"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3671",
+    "name": "Proyecto Final de Carrera",
+    "year": 5,
+    "semester": 9,
+    "correlatives": [
+      "3656",
+      "3659",
+      "3660",
+      "3667"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "E1",
+    "name": "Electiva I (Lenguaje Orientado a Negocios)",
+    "year": 5,
+    "semester": 9,
+    "correlatives": [
+      "3652",
+      "3653",
+      "3661"
+    ],
+    "elective": true,
+    "transversal": false
+  },
+  {
+    "id": "3675",
+    "name": "Práctica Profesional Supervisada",
+    "year": 5,
+    "semester": 10,
+    "correlatives": [
+      "3636",
+      "3642",
+      "3640"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "E2.1",
+    "name": "Electiva II (Tecnologías en Seguridad)",
+    "year": 5,
+    "semester": 10,
+    "correlatives": [
+      "3652",
+      "3653",
+      "3661"
+    ],
+    "elective": true,
+    "transversal": false
+  },
+  {
+    "id": "E2.2",
+    "name": "Electiva II (Redes Móviles e IoT)",
+    "year": 5,
+    "semester": 10,
+    "correlatives": [
+      "3652",
+      "3653",
+      "3661"
+    ],
+    "elective": true,
+    "transversal": false
+  },
+  {
+    "id": "E3",
+    "name": "Electiva III (Visión Artificial)",
+    "year": 5,
+    "semester": 10,
+    "correlatives": [
+      "3652",
+      "3653",
+      "3661"
+    ],
+    "elective": true,
+    "transversal": false
+  },
+  {
+    "id": "00901",
+    "name": "Inglés Nivel I",
+    "year": 0,
+    "semester": 0,
+    "correlatives": [],
+    "elective": false,
+    "transversal": true
+  },
+  {
+    "id": "00902",
+    "name": "Inglés Nivel II",
+    "year": 0,
+    "semester": 0,
+    "correlatives": [
+      "00901"
+    ],
+    "elective": false,
+    "transversal": true
+  },
+  {
+    "id": "00903",
+    "name": "Inglés Nivel III",
+    "year": 0,
+    "semester": 0,
+    "correlatives": [
+      "00902"
+    ],
+    "elective": false,
+    "transversal": true
+  },
+  {
+    "id": "00904",
+    "name": "Inglés Nivel IV",
+    "year": 0,
+    "semester": 0,
+    "correlatives": [
+      "00903"
+    ],
+    "elective": false,
+    "transversal": true
+  },
+  {
+    "id": "00911",
+    "name": "Computación Nivel I",
+    "year": 0,
+    "semester": 0,
+    "correlatives": [],
+    "elective": false,
+    "transversal": true
+  },
+  {
+    "id": "00912",
+    "name": "Computación Nivel II",
+    "year": 0,
+    "semester": 0,
+    "correlatives": [
+      "00911"
+    ],
+    "elective": false,
+    "transversal": true
+  }
+]
