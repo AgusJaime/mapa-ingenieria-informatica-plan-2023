@@ -10,8 +10,8 @@ import subjectsData from './data/subjects.json';
 const nodeTypes = { subject: SubjectNode };
 
 // Constants for layout
-const X_SPACING = 320;
-const Y_SPACING = 140;
+const X_SPACING = 180;
+const Y_SPACING = 80;
 
 function calculateInitialLayout(subjects, showElectives) {
   const nodes = [];

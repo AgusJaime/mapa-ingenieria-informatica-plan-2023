@@ -43,9 +43,15 @@ body {
 
 /* Node Styling */
 .subject-node {
-  border-radius: 12px;
-  padding: 16px;
-  width: 220px;
+  border-radius: 8px;
+  padding: 8px 10px;
+  width: 140px;
+  min-height: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -340,15 +346,25 @@ body {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: none;
-  border: none;
+  background: transparent;
   color: var(--text-secondary);
+  border: none;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 4px;
+}
+
+.shortcut-modal button:hover {
+  color: var(--text-primary);
+}
+
+/* Fix Controls Artifacts */
+.react-flow__controls-button {
+  background-color: var(--bg-color) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+  fill: var(--text-primary) !important;
+}
+.react-flow__controls-button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 .sidebar-close:hover {
   background: rgba(255,255,255,0.1);

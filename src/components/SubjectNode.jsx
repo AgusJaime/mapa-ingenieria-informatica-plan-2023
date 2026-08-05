@@ -46,20 +46,16 @@ export default function SubjectNode({ data, selected }) {
     >
       <Handle type="target" position={Position.Left} style={{ opacity: 0 }} />
       
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
-        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
-          {subject.id}
-        </span>
-        <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
-          {note && <span style={{ fontSize: '0.75rem', fontWeight: 'bold', background: 'rgba(255,255,255,0.1)', padding: '2px 6px', borderRadius: '4px' }}>{note}</span>}
-          {subject.elective && <Star size={14} color="#fbbf24" />}
-          {STATE_ICONS[status] || STATE_ICONS.nodisponible}
-        </div>
-      </div>
-      
-      <h3 style={{ fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.3, margin: 0 }}>
+      <h3 style={{ fontSize: '0.75rem', fontWeight: 500, lineHeight: 1.2, margin: 0, paddingBottom: (note || subject.elective) ? '6px' : '0' }}>
         {subject.name}
       </h3>
+
+      {(note || subject.elective) && (
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', justifyContent: 'center' }}>
+          {note && <span style={{ fontSize: '0.65rem', fontWeight: 'bold', background: 'rgba(255,255,255,0.15)', padding: '2px 6px', borderRadius: '4px' }}>{note}</span>}
+          {subject.elective && <Star size={12} color="#fbbf24" />}
+        </div>
+      )}
       
       <Handle type="source" position={Position.Right} style={{ opacity: 0 }} />
     </div>
