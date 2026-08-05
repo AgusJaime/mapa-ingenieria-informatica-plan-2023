@@ -250,6 +250,20 @@ body {
   filter: drop-shadow(0 0 8px var(--path-color, #f97316));
 }
 
+.shortcuts-tooltip {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 200;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(24, 24, 27, 0.95);
+  pointer-events: none;
+}
+
 @keyframes glowPulse {
   0% { opacity: 0.8; }
   100% { opacity: 1; }

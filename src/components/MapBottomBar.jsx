@@ -48,7 +48,7 @@ export default function MapBottomBar({
         </button>
 
         <button 
-          className={`btn ${simulationMode ? 'btn-active' : 'btn-secondary'}`}
+          className={`btn ${simulationMode ? 'btn-sim active' : 'btn-secondary'}`}
           onClick={() => setSimulationMode(!simulationMode)}
         >
           <Wand2 size={18} />
