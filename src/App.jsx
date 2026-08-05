@@ -432,7 +432,10 @@ function MainFlow() {
         onNodeDoubleClick={(_, node) => setSelectedDetails(node.id)}
         onNodeMouseEnter={onNodeMouseEnter}
         onNodeMouseLeave={onNodeMouseLeave}
-        onPaneClick={() => setSelectedDetails(null)}
+        onPaneClick={() => {
+          setSelectedDetails(null);
+          setContextMenu(null);
+        }}
         nodeTypes={nodeTypes}
         fitView
         minZoom={0.2}

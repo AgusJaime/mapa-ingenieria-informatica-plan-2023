@@ -2,7 +2,7 @@
 
 Un visualizador interactivo, moderno y altamente personalizable del plan de estudios (Plan 2023) para la carrera de **Ingeniería Informática** en la **Universidad Nacional de La Matanza (UNLaM)**.
 
-![Estado del Proyecto](https://img.shields.io/badge/Estado-Completado-success)
+![Estado del Proyecto](https://img.shields.io/badge/Estado-En_Revisi%C3%B3n-warning)
 ![React](https://img.shields.io/badge/React-18.2-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5.0-purple?logo=vite)
 ![React Flow](https://img.shields.io/badge/React_Flow-11.10-ff0072)
