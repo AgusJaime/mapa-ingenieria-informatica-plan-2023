@@ -196,6 +196,13 @@ function MainFlow() {
     return migrated;
   });
   
+  const [positionsState, setPositionsState] = useState(() => {
+    const saved = localStorage.getItem('unlam-positions');
+    return saved ? JSON.parse(saved) : {};
+  });
+  const positionsRef = useRef(positionsState);
+  useEffect(() => { positionsRef.current = positionsState; }, [positionsState]);
+
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
   const [selectedNode, setSelectedNode] = useState(null);
@@ -212,10 +219,14 @@ function MainFlow() {
     
     // Inject status, state, callbacks to nodes
     const configuredNodes = initialNodes.map(n => {
-      if (n.type !== 'subject') return n;
+      const savedPos = positionsRef.current[n.id];
+      const pos = savedPos || n.position;
+
+      if (n.type !== 'subject') return { ...n, position: pos };
       
       return {
         ...n,
+        position: pos,
         data: {
           ...n.data,
           status: calculateStatus(n.data.subject, userState, simulationState, subjectsData),
@@ -301,20 +312,18 @@ function MainFlow() {
 
   const onNodesChange = useCallback(
     (changes) => {
-      // Restrict dragging to vertical (Y axis) only
-      const modifiedChanges = changes.map(change => {
-        if (change.type === 'position' && change.position) {
-          return {
-            ...change,
-            position: { ...change.position, x: nodes.find(n => n.id === change.id)?.position.x || change.position.x }
-          };
-        }
-        return change;
-      });
-      setNodes((nds) => applyNodeChanges(modifiedChanges, nds));
+      setNodes((nds) => applyNodeChanges(changes, nds));
     },
-    [nodes]
+    []
   );
+
+  const onNodeDragStop = useCallback((event, node) => {
+    setPositionsState(prev => {
+      const newPos = { ...prev, [node.id]: node.position };
+      localStorage.setItem('unlam-positions', JSON.stringify(newPos));
+      return newPos;
+    });
+  }, []);
 
   const onNodeMouseEnter = useCallback((_, node) => {
     if (hoverTimeoutRef.current) {
@@ -464,6 +473,7 @@ function MainFlow() {
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
+        onNodeDragStop={onNodeDragStop}
         onNodeClick={handleNodeClick}
         onNodeDoubleClick={(_, node) => setSelectedDetails(node.id)}
         onNodeMouseEnter={onNodeMouseEnter}
