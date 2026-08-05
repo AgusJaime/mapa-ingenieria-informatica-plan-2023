@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import { CheckCircle2, Circle, Clock, Ban, Star } from 'lucide-react';
+import { CheckCircle2, Circle, Clock, Ban, Star, Mail } from 'lucide-react';
 
 const STATE_COLORS = {
   promocionada: 'var(--state-promocionada)',
@@ -28,6 +28,7 @@ const STATE_ICONS = {
 
 export default function SubjectNode({ data, selected }) {
   const { subject, status, note, onContextMenu } = data;
+  const [showNote, setShowNote] = useState(false);
 
   const handleContextMenu = (e) => {
     e.preventDefault();
@@ -52,8 +53,26 @@ export default function SubjectNode({ data, selected }) {
 
       {(note || subject.elective) && (
         <div style={{ display: 'flex', gap: '6px', alignItems: 'center', justifyContent: 'center' }}>
-          {note && <span style={{ fontSize: '0.65rem', fontWeight: 'bold', background: 'rgba(255,255,255,0.15)', padding: '2px 6px', borderRadius: '4px' }}>{note}</span>}
           {subject.elective && <Star size={12} color="#fbbf24" />}
+        </div>
+      )}
+
+      {note && (
+        <div 
+          style={{ position: 'absolute', top: '-10px', right: '-10px', cursor: 'pointer', zIndex: 10, background: 'var(--accent-color)', borderRadius: '50%', padding: '6px', boxShadow: '0 2px 8px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid rgba(255,255,255,0.1)' }}
+          onClick={(e) => { e.stopPropagation(); setShowNote(!showNote); }}
+          title="Ver anotación"
+        >
+          <Mail size={14} color="white" />
+        </div>
+      )}
+
+      {showNote && note && (
+        <div 
+          style={{ position: 'absolute', top: '-48px', right: '-20px', background: 'rgba(0,0,0,0.95)', padding: '8px 12px', borderRadius: '8px', fontSize: '0.75rem', color: 'white', whiteSpace: 'nowrap', zIndex: 20, border: '1px solid rgba(255,255,255,0.2)', pointerEvents: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.5)' }}
+        >
+          {note}
+          <div style={{ position: 'absolute', bottom: '-5px', right: '22px', width: '10px', height: '10px', background: 'rgba(0,0,0,0.95)', borderBottom: '1px solid rgba(255,255,255,0.2)', borderRight: '1px solid rgba(255,255,255,0.2)', transform: 'rotate(45deg)' }}></div>
         </div>
       )}
       
