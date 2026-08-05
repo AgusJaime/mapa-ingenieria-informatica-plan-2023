@@ -605,7 +605,7 @@
   },
   {
     "id": "E1",
-    "name": "Electiva I (Lenguaje Orientado a Negocios)",
+    "name": "Lenguaje Orientado a Negocios",
     "year": 5,
     "semester": 9,
     "correlatives": [
@@ -631,7 +631,7 @@
   },
   {
     "id": "E2.1",
-    "name": "Electiva II (Tecnologías en Seguridad)",
+    "name": "Tecnologías en Seguridad",
     "year": 5,
     "semester": 10,
     "correlatives": [
@@ -644,7 +644,7 @@
   },
   {
     "id": "E2.2",
-    "name": "Electiva II (Redes Móviles e IoT)",
+    "name": "Redes Móviles e IoT",
     "year": 5,
     "semester": 10,
     "correlatives": [
@@ -657,7 +657,20 @@
   },
   {
     "id": "E3",
-    "name": "Electiva III (Visión Artificial)",
+    "name": "Visión Artificial",
+    "year": 5,
+    "semester": 10,
+    "correlatives": [
+      "3652",
+      "3653",
+      "3661"
+    ],
+    "elective": true,
+    "transversal": false
+  },
+  {
+    "id": "E4",
+    "name": "Informática Biomédica y Tecnologías de la Salud",
     "year": 5,
     "semester": 10,
     "correlatives": [

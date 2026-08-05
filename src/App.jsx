@@ -5,9 +5,10 @@ import * as XLSX from 'xlsx';
 import { Download, Eye, EyeOff, Wand2, HelpCircle, X } from 'lucide-react';
 
 import SubjectNode from './components/SubjectNode';
+import SemesterLabelNode from './components/SemesterLabelNode';
 import subjectsData from './data/subjects.json';
 
-const nodeTypes = { subject: SubjectNode };
+const nodeTypes = { subject: SubjectNode, semesterLabel: SemesterLabelNode };
 
 // Constants for layout
 const X_SPACING = 180;
@@ -29,17 +30,29 @@ function calculateInitialLayout(subjects, showElectives) {
   
   // Calculate node positions
   Object.keys(semesters).forEach(sem => {
+    const semNum = parseInt(sem);
     const semSubjects = semesters[sem];
-    const xPos = (parseInt(sem) - 1) * X_SPACING;
+    const xPos = (semNum - 1) * X_SPACING;
+    
+    if (semNum > 0) {
+      nodes.push({
+        id: `sem-label-${semNum}`,
+        type: 'semesterLabel',
+        position: { x: xPos + 100, y: 120 }, // Above the columns
+        data: { semester: semNum },
+        draggable: false,
+        selectable: false
+      });
+    }
     
     semSubjects.forEach((sub, index) => {
-      // Basic centering
-      const yPos = index * Y_SPACING - ((semSubjects.length - 1) * Y_SPACING) / 2;
+      // Top alignment instead of centering
+      const yPos = index * Y_SPACING;
       
       nodes.push({
         id: sub.id,
         type: 'subject',
-        position: { x: xPos + 100, y: yPos + 400 },
+        position: { x: xPos + 100, y: yPos + 200 },
         data: { subject: sub },
         draggable: true,
       });
@@ -198,15 +211,19 @@ function MainFlow() {
     const { nodes: initialNodes, edges: initialEdges } = calculateInitialLayout(subjectsData, showElectives);
     
     // Inject status, state, callbacks to nodes
-    const configuredNodes = initialNodes.map(n => ({
-      ...n,
-      data: {
-        ...n.data,
-        status: calculateStatus(n.data.subject, userState, simulationState, subjectsData),
-        note: userState[n.id]?.note || '',
-        onContextMenu: handleNodeContextMenu
-      }
-    }));
+    const configuredNodes = initialNodes.map(n => {
+      if (n.type !== 'subject') return n;
+      
+      return {
+        ...n,
+        data: {
+          ...n.data,
+          status: calculateStatus(n.data.subject, userState, simulationState, subjectsData),
+          note: userState[n.id]?.note || '',
+          onContextMenu: handleNodeContextMenu
+        }
+      };
+    });
     
     setNodes(configuredNodes);
     setEdges(initialEdges);
@@ -387,22 +404,41 @@ function MainFlow() {
   }, [selectedNode, edges.length, shiftPressed]); // edges.length as dependency to avoid cycles but run on edge update
 
   const exportToExcel = () => {
+    const statusMap = {
+      'promocionada': 'Aprobada / Promocionada',
+      'cursada': 'Cursada',
+      'disponible': 'Disponible',
+      'nodisponible': 'No Disponible',
+      'simulada': 'Proyectada (Simulación)'
+    };
+
     const dataToExport = subjectsData.map(sub => {
       const st = calculateStatus(sub, userState, simulationState, subjectsData);
       return {
-        ID: sub.id,
-        Materia: sub.name,
-        Año: sub.year,
-        Cuatrimestre: sub.semester,
-        Estado: st,
-        Nota: userState[sub.id]?.note || '-'
+        'Código': sub.id,
+        'Materia': sub.name,
+        'Año': sub.year === 0 ? 'Transversal' : `${sub.year}° Año`,
+        'Cuatrimestre': sub.semester === 0 ? '-' : (sub.semester % 2 === 1 ? '1er Cuatrimestre' : '2do Cuatrimestre'),
+        'Estado': statusMap[st] || st,
+        'Nota / Anotación': userState[sub.id]?.note || '-'
       };
     });
 
     const ws = XLSX.utils.json_to_sheet(dataToExport);
+    
+    // Anchos de columna para que quede más prolijo
+    ws['!cols'] = [
+      {wch: 8},   // Código
+      {wch: 45},  // Materia
+      {wch: 12},  // Año
+      {wch: 20},  // Cuatrimestre
+      {wch: 25},  // Estado
+      {wch: 30}   // Nota / Anotación
+    ];
+
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Progreso");
-    XLSX.writeFile(wb, "Progreso_UNLaM.xlsx");
+    XLSX.utils.book_append_sheet(wb, ws, "Progreso UNLaM");
+    XLSX.writeFile(wb, "Progreso_UNLaM_Informatica.xlsx");
   };
 
   // Stats calculation
@@ -530,7 +566,10 @@ function MainFlow() {
                 <circle cx="20" cy="20" r="18" className="ring-bg" />
                 <circle cx="20" cy="20" r="18" className="ring-fill" style={{ strokeDasharray: 113, strokeDashoffset: dashoffset }} />
               </svg>
-              <span>Año {year}</span>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontWeight: 600 }}>{year}° Año</span>
+                <span style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>{pct}%</span>
+              </div>
             </div>
           );
         })}
