@@ -16,6 +16,7 @@ import subjectsData from './data/subjects.json';
 function MainFlow() {
   const {
     showElectives, setShowElectives,
+    showTransversals, setShowTransversals,
     simulationMode, setSimulationMode,
     simulationState, setSimulationState,
     shiftPressed,
@@ -67,11 +68,7 @@ function MainFlow() {
 
   const handleNodeContextMenu = (e, nodeId) => {
     e.preventDefault();
-    setContextMenu({
-      mouseX: e.clientX,
-      mouseY: e.clientY,
-      nodeId: nodeId
-    });
+    setSelectedDetails(nodeId);
   };
 
   const setNodeStatus = (status) => {
@@ -107,6 +104,7 @@ function MainFlow() {
       <MapCanvas 
         subjectsData={subjectsData}
         showElectives={showElectives}
+        showTransversals={showTransversals}
         userState={userState}
         simulationState={simulationState}
         positionsRef={positionsRef}
@@ -143,22 +141,14 @@ function MainFlow() {
         setSimulationMode={setSimulationMode}
         showElectives={showElectives}
         setShowElectives={setShowElectives}
+        showTransversals={showTransversals}
+        setShowTransversals={setShowTransversals}
         setShowShortcuts={setShowShortcuts}
         exportToExcel={() => exportToExcel(subjectsData, userState, simulationState)}
         resetPositions={resetPositions}
       />
 
-      {/* Context Menu */}
-      {contextMenu && (
-        <div 
-          className="context-menu glass"
-          style={{ top: contextMenu.mouseY, left: contextMenu.mouseX }}
-        >
-          <button onClick={() => setNodeStatus('promocionada')}>Aprobada</button>
-          <button onClick={() => setNodeStatus('cursada')}>Regular</button>
-          <button onClick={() => setNodeStatus(null)} className="danger">Quitar estado</button>
-        </div>
-      )}
+      {/* Context Menu fue removido en favor del panel lateral al hacer click derecho */}
 
       {/* Shortcuts tooltip without its own button now, as it's triggered from bottom bar */}
       {showShortcuts && (
@@ -166,8 +156,7 @@ function MainFlow() {
           <h4 style={{ margin: '0 0 8px 0', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '4px' }}>Atajos</h4>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', fontSize: '0.85rem' }}>
             <li style={{ marginBottom: '4px' }}><strong>Click:</strong> Aprobar / Desaprobar</li>
-            <li style={{ marginBottom: '4px' }}><strong>Click Derecho:</strong> Cambiar estado (Aprobada/Regular)</li>
-            <li style={{ marginBottom: '4px' }}><strong>Doble Click:</strong> Ver detalles / Agregar nota</li>
+            <li style={{ marginBottom: '4px' }}><strong>Click Derecho:</strong> Abrir panel lateral</li>
             <li style={{ marginBottom: '4px' }}><strong>Shift + Hover:</strong> Ver correlativas requeridas</li>
             <li><strong>Arrastrar materia:</strong> Personalizar ubicación</li>
           </ul>

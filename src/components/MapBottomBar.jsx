@@ -4,11 +4,13 @@ import { Download, Eye, EyeOff, Wand2, HelpCircle, RefreshCcw } from 'lucide-rea
 export default function MapBottomBar({ 
   subjectsData, 
   userState, 
-  simulationState,
-  simulationMode,
+  simulationState, 
+  simulationMode, 
   setSimulationMode,
   showElectives,
   setShowElectives,
+  showTransversals,
+  setShowTransversals,
   setShowShortcuts,
   exportToExcel,
   resetPositions
@@ -45,6 +47,14 @@ export default function MapBottomBar({
         >
           {showElectives ? <EyeOff size={18} /> : <Eye size={18} />}
           {showElectives ? 'Ocultar Electivas' : 'Mostrar Electivas'}
+        </button>
+
+        <button 
+          className="btn btn-secondary" 
+          onClick={() => setShowTransversals(!showTransversals)}
+        >
+          {showTransversals ? <EyeOff size={18} /> : <Eye size={18} />}
+          {showTransversals ? 'Ocultar Transversales' : 'Mostrar Transversales'}
         </button>
 
         <button 

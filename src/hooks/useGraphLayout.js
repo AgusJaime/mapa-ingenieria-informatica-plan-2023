@@ -5,11 +5,11 @@ import { calculateInitialLayout, calculateStatus, getTransitiveCorrelatives, get
 export function useGraphLayout({
   subjectsData, 
   showElectives, 
+  showTransversals,
   userState, 
   simulationState, 
   positionsRef,
   resetTrigger,
-  handleNodeContextMenu,
   selectedNode,
   shiftPressed
 }) {
@@ -18,7 +18,7 @@ export function useGraphLayout({
 
   // Initialize and inject status to nodes
   useEffect(() => {
-    const { nodes: initialNodes, edges: initialEdges } = calculateInitialLayout(subjectsData, showElectives);
+    const { nodes: initialNodes, edges: initialEdges } = calculateInitialLayout(subjectsData, showElectives, showTransversals);
     
     const configuredNodes = initialNodes.map(n => {
       const savedPos = positionsRef.current[n.id];
@@ -32,15 +32,14 @@ export function useGraphLayout({
         data: {
           ...n.data,
           status: calculateStatus(n.data.subject, userState, simulationState, subjectsData),
-          note: userState[n.id]?.note || '',
-          onContextMenu: handleNodeContextMenu
+          note: userState[n.id]?.note || ''
         }
       };
     });
     
     setNodes(configuredNodes);
     setEdges(initialEdges);
-  }, [showElectives, userState, simulationState, resetTrigger]);
+  }, [showElectives, showTransversals, userState, simulationState, resetTrigger]);
 
   // Update classes for highlighting
   useEffect(() => {

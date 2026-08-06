@@ -3,6 +3,7 @@ import { codeMap } from '../utils/constants';
 
 export function useMapState() {
   const [showElectives, setShowElectives] = useState(true);
+  const [showTransversals, setShowTransversals] = useState(true);
   const [simulationMode, setSimulationMode] = useState(false);
   const [simulationState, setSimulationState] = useState({});
   const [shiftPressed, setShiftPressed] = useState(false);
@@ -58,9 +59,10 @@ export function useMapState() {
 
   return {
     showElectives, setShowElectives,
+    showTransversals, setShowTransversals,
     simulationMode, setSimulationMode,
     simulationState, setSimulationState,
-    shiftPressed,
+    shiftPressed, setShiftPressed,
     showShortcuts, setShowShortcuts,
     selectedDetails, setSelectedDetails,
     contextMenu, setContextMenu,

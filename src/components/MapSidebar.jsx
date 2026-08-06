@@ -51,7 +51,7 @@ export default function MapSidebar({ selectedDetails, subjectsData, setSelectedD
         </p>
         
         <div style={{ marginTop: '24px' }}>
-          <h4>Estado (Doble clic en el mapa)</h4>
+          <h4>Estado</h4>
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '8px' }}>
             <button 
               className={`btn ${userState[sub.id]?.status === 'promocionada' ? 'btn-primary' : 'btn-secondary'}`}
@@ -64,6 +64,12 @@ export default function MapSidebar({ selectedDetails, subjectsData, setSelectedD
               onClick={() => updateNodeState(sub.id, userState[sub.id]?.status === 'cursada' ? null : 'cursada')}
             >
               Regular
+            </button>
+            <button 
+              className="btn danger"
+              onClick={() => updateNodeState(sub.id, null)}
+            >
+              Quitar estado
             </button>
           </div>
         </div>
@@ -114,7 +120,7 @@ export default function MapSidebar({ selectedDetails, subjectsData, setSelectedD
             <ul style={{ paddingLeft: '20px', color: 'var(--text-secondary)' }}>
               {sub.correlatives.map(cId => {
                 const corr = subjectsData.find(s => s.id === cId);
-                return <li key={cId}>{corr ? corr.name : cId}</li>;
+                return <li key={cId}>{cId} - {corr ? corr.name : 'Desconocida'}</li>;
               })}
             </ul>
           )}

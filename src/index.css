@@ -4,19 +4,19 @@
   --text-secondary: #94a3b8;
   --accent-color: #3b82f6;
   
-  /* State colors */
-  --state-promocionada: #10b981;
-  --state-cursada: #f59e0b;
-  --state-disponible: #3b82f6;
-  --state-nodisponible: #475569;
-  --state-simulada: #c084fc; /* Purple for simulated */
+  /* State colors - More lucid/vibrant */
+  --state-promocionada: #22c55e;
+  --state-cursada: #facc15;
+  --state-disponible: #38bdf8;
+  --state-nodisponible: #64748b;
+  --state-simulada: #e879f9;
   
-  /* Node gradients */
-  --grad-promocionada: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.05));
-  --grad-cursada: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.05));
-  --grad-disponible: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.05));
-  --grad-nodisponible: linear-gradient(135deg, rgba(71, 85, 105, 0.2), rgba(71, 85, 105, 0.05));
-  --grad-simulada: linear-gradient(135deg, rgba(192, 132, 252, 0.3), rgba(192, 132, 252, 0.05));
+  /* Node gradients - Higher opacity for more color impact */
+  --grad-promocionada: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(34, 197, 94, 0.1));
+  --grad-cursada: linear-gradient(135deg, rgba(250, 204, 21, 0.35), rgba(250, 204, 21, 0.1));
+  --grad-disponible: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(56, 189, 248, 0.1));
+  --grad-nodisponible: linear-gradient(135deg, rgba(100, 116, 139, 0.25), rgba(100, 116, 139, 0.08));
+  --grad-simulada: linear-gradient(135deg, rgba(232, 121, 249, 0.35), rgba(232, 121, 249, 0.1));
 }
 
 * {

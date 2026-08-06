@@ -1,7 +1,7 @@
 import { MarkerType } from 'reactflow';
 import { X_SPACING, Y_SPACING } from './constants';
 
-export function calculateInitialLayout(subjects, showElectives) {
+export function calculateInitialLayout(subjects, showElectives, showTransversals) {
   const nodes = [];
   const edges = [];
   
@@ -10,6 +10,7 @@ export function calculateInitialLayout(subjects, showElectives) {
   
   subjects.forEach(sub => {
     if (!showElectives && sub.elective) return;
+    if (!showTransversals && sub.transversal) return;
     
     if (!semesters[sub.semester]) semesters[sub.semester] = [];
     semesters[sub.semester].push(sub);
@@ -40,8 +41,7 @@ export function calculateInitialLayout(subjects, showElectives) {
         id: sub.id,
         type: 'subject',
         position: { x: xPos + 100, y: yPos + 200 },
-        data: { subject: sub },
-        draggable: true,
+        data: { subject: sub }
       });
     });
   });

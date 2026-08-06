@@ -27,23 +27,16 @@ const STATE_ICONS = {
 };
 
 export default function SubjectNode({ data, selected }) {
-  const { subject, status, note, onContextMenu } = data;
+  const { subject, status, note } = data;
   const [showNote, setShowNote] = useState(false);
 
-  const handleContextMenu = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (onContextMenu) onContextMenu(e, subject.id);
-  };
-
   return (
-    <div 
+    <div
       className={`subject-node glass ${selected ? 'selected' : ''}`}
       style={{
         background: STATE_GRADIENTS[status] || STATE_GRADIENTS.nodisponible,
         borderColor: STATE_COLORS[status] || STATE_COLORS.nodisponible
       }}
-      onContextMenu={handleContextMenu}
     >
       <Handle type="target" position={Position.Left} style={{ opacity: 0 }} />
       
