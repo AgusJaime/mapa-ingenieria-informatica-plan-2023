@@ -15,6 +15,7 @@ export default function MapCanvas({
   showTransversals,
   userState,
   simulationState,
+  isDarkMode,
   positionsRef,
   resetTrigger,
   onNodeDragStop,
@@ -88,19 +89,28 @@ export default function MapCanvas({
         onNodeMouseLeave={onNodeMouseLeave}
         onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
+        proOptions={{ hideAttribution: true }}
         fitView
         minZoom={0.2}
       >
-        <Background color="#52525b" gap={20} className="react-flow__background-pattern" />
-        <Controls showInteractive={false} style={{ background: 'rgba(24,24,27,0.8)', fill: 'white' }}>
-          <ControlButton onClick={() => setNodesLocked(!nodesLocked)} title={nodesLocked ? 'Desbloquear posiciones' : 'Bloquear posiciones'} style={{ color: nodesLocked ? '#f97316' : 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Background 
+          color={isDarkMode ? "#52525b" : "#cbd5e1"} 
+          gap={20} 
+          className="react-flow__background-pattern" 
+        />
+        <Controls showInteractive={false} style={{ background: isDarkMode ? 'rgba(24,24,27,0.8)' : 'rgba(255,255,255,0.8)', fill: isDarkMode ? 'white' : 'black' }}>
+          <ControlButton onClick={() => setNodesLocked(!nodesLocked)} title={nodesLocked ? 'Desbloquear posiciones' : 'Bloquear posiciones'} style={{ color: nodesLocked ? '#f97316' : (isDarkMode ? 'white' : 'black'), display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {nodesLocked ? <Lock size={14} /> : <Unlock size={14} />}
           </ControlButton>
         </Controls>
         <MiniMap 
-          nodeColor={n => n.className?.includes('highlighted') ? 'var(--accent-color)' : 'rgba(255,255,255,0.1)'} 
-          maskColor="rgba(0,0,0,0.5)" 
-          style={{ background: 'rgba(24,24,27,0.8)' }} 
+          nodeColor={n => n.className?.includes('highlighted') ? 'var(--accent-color)' : (isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)')} 
+          maskColor={isDarkMode ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.5)"} 
+          className="glass"
+          style={{ 
+            backgroundColor: isDarkMode ? 'rgba(24, 24, 27, 0.6)' : 'rgba(255, 255, 255, 0.6)',
+            borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+          }}
         />
       </ReactFlow>
     </div>

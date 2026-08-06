@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Eye, EyeOff, Wand2, HelpCircle, RefreshCcw } from 'lucide-react';
+import { Download, Eye, EyeOff, Wand2, HelpCircle, RefreshCcw, Sun, Moon } from 'lucide-react';
 
 export default function MapBottomBar({ 
   subjectsData, 
@@ -12,6 +12,8 @@ export default function MapBottomBar({
   showTransversals,
   setShowTransversals,
   setShowShortcuts,
+  isDarkMode,
+  setIsDarkMode,
   exportToExcel,
   resetPositions
 }) {
@@ -80,6 +82,14 @@ export default function MapBottomBar({
           title="Restaurar Posiciones"
         >
           <RefreshCcw size={18} />
+        </button>
+
+        <button 
+          className="btn btn-secondary" 
+          onClick={() => setIsDarkMode(!isDarkMode)} 
+          title={isDarkMode ? "Cambiar a Modo Claro" : "Cambiar a Modo Oscuro"}
+        >
+          {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>
       </div>
 

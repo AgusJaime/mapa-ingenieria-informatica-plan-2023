@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactFlowProvider } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { HelpCircle } from 'lucide-react';
@@ -28,6 +28,16 @@ function MainFlow() {
 
   const { positionsRef, onNodeDragStop, resetPositions, resetTrigger } = useNodePositions();
   const [selectedNode, setSelectedNode] = useState(null);
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('unlam-theme');
+    return savedTheme ? savedTheme === 'dark' : true;
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('unlam-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
   const handleNodeClick = (_, node) => {
     if (simulationMode) {
@@ -107,6 +117,7 @@ function MainFlow() {
         showTransversals={showTransversals}
         userState={userState}
         simulationState={simulationState}
+        isDarkMode={isDarkMode}
         positionsRef={positionsRef}
         resetTrigger={resetTrigger}
         onNodeDragStop={onNodeDragStop}
@@ -144,6 +155,8 @@ function MainFlow() {
         showTransversals={showTransversals}
         setShowTransversals={setShowTransversals}
         setShowShortcuts={setShowShortcuts}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
         exportToExcel={() => exportToExcel(subjectsData, userState, simulationState)}
         resetPositions={resetPositions}
       />
