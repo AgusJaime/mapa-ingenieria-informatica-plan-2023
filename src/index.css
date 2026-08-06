@@ -3,44 +3,20 @@
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --accent-color: #3b82f6;
-  
+
   /* State colors - More lucid/vibrant */
   --state-promocionada: #22c55e;
   --state-cursada: #facc15;
   --state-disponible: #38bdf8;
   --state-nodisponible: #64748b;
   --state-simulada: #e879f9;
-  
+
   /* Node gradients - Higher opacity for more color impact */
   --grad-promocionada: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(34, 197, 94, 0.1));
   --grad-cursada: linear-gradient(135deg, rgba(250, 204, 21, 0.35), rgba(250, 204, 21, 0.1));
   --grad-disponible: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(56, 189, 248, 0.1));
   --grad-nodisponible: linear-gradient(135deg, rgba(100, 116, 139, 0.25), rgba(100, 116, 139, 0.08));
   --grad-simulada: linear-gradient(135deg, rgba(232, 121, 249, 0.35), rgba(232, 121, 249, 0.1));
-  
-  --edge-color: rgba(255, 255, 255, 0.2);
-}
-
-[data-theme='light'] {
-  --bg-color: #f1f5f9; /* Slate 100 */
-  --text-primary: #1e293b; /* Slate 800 */
-  --text-secondary: #475569; /* Slate 600 */
-  
-  --edge-color: rgba(0, 0, 0, 0.25);
-  
-  /* State colors - keep them vibrant but legible on white */
-  --state-promocionada: #16a34a; /* Green 600 */
-  --state-cursada: #eab308; /* Yellow 500 */
-  --state-disponible: #0284c7; /* Sky 600 */
-  --state-nodisponible: #94a3b8; /* Slate 400 */
-  --state-simulada: #c026d3; /* Fuchsia 600 */
-  
-  /* Node gradients - subtle for light mode */
-  --grad-promocionada: linear-gradient(135deg, rgba(22, 163, 74, 0.15), rgba(22, 163, 74, 0.05));
-  --grad-cursada: linear-gradient(135deg, rgba(234, 179, 8, 0.15), rgba(234, 179, 8, 0.05));
-  --grad-disponible: linear-gradient(135deg, rgba(2, 132, 199, 0.15), rgba(2, 132, 199, 0.05));
-  --grad-nodisponible: linear-gradient(135deg, rgba(148, 163, 184, 0.15), rgba(148, 163, 184, 0.05));
-  --grad-simulada: linear-gradient(135deg, rgba(192, 38, 211, 0.15), rgba(192, 38, 211, 0.05));
 }
 
 * {
@@ -53,7 +29,8 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
-  overflow: hidden; /* React Flow will handle scrolling */
+  overflow: hidden;
+  /* React Flow will handle scrolling */
 }
 
 /* Glassmorphism effects */
@@ -63,12 +40,6 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-[data-theme='light'] .glass {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 /* Node Styling */
@@ -106,6 +77,7 @@ body {
 
 .react-flow__node.highlighted .subject-node {
   box-shadow: 0 0 20px 2px rgba(34, 211, 238, 0.5);
+  border-color: #22d3ee !important;
   transform: scale(1.02);
 }
 
@@ -129,6 +101,7 @@ body {
   from {
     stroke-dashoffset: 20;
   }
+
   to {
     stroke-dashoffset: 0;
   }
@@ -186,21 +159,16 @@ body {
   align-items: center;
   gap: 24px;
   z-index: 100;
-  background: rgba(18, 16, 16, 0.65) !important;
-  backdrop-filter: blur(14px) !important;
+  background: rgba(18, 16, 16, 0.75) !important;
+  backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-[data-theme='light'] .bottom-bar {
-  background: rgba(255, 255, 255, 0.75) !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-primary);
+  color: white;
   padding: 8px 16px;
   border-radius: 999px;
   cursor: pointer;
@@ -209,11 +177,6 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-[data-theme='light'] .btn {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
@@ -259,7 +222,8 @@ body {
   color: #f3e8ff;
 }
 
-.btn-sim:hover, .btn-sim.active {
+.btn-sim:hover,
+.btn-sim.active {
   background: rgba(192, 132, 252, 0.5);
   border-color: #c084fc;
 }
@@ -273,22 +237,22 @@ body {
   border-radius: 12px;
   overflow: hidden;
 }
+
 .react-flow__minimap-mask {
   fill: rgba(0, 0, 0, 0.4);
 }
+
 .react-flow__minimap-node {
   fill: rgba(255, 255, 255, 0.3);
-}
-
-[data-theme='light'] .react-flow__minimap-node {
-  fill: rgba(0, 0, 0, 0.2);
 }
 
 /* 2. Critical Path (Shift + Hover) */
 .react-flow__node.path-highlighted .subject-node {
   box-shadow: 0 0 25px 5px var(--path-glow-color, rgba(249, 115, 22, 0.7));
+  border-color: var(--path-color, #f97316) !important;
   transform: scale(1.05);
 }
+
 .react-flow__edge.path-highlighted .react-flow__edge-path {
   stroke: var(--path-color, #f97316) !important;
   stroke-width: 5 !important;
@@ -304,21 +268,20 @@ body {
   padding: 20px;
   border-radius: 12px;
   z-index: 200;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(24, 24, 27, 0.95);
   pointer-events: none;
 }
 
-[data-theme='light'] .shortcuts-tooltip {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
 @keyframes glowPulse {
-  0% { opacity: 0.8; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* 3. Year Progress Rings Container */
@@ -333,24 +296,25 @@ body {
   padding: 16px;
   border-radius: 16px;
 }
+
 .year-progress-ring {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .ring-svg {
   width: 40px;
   height: 40px;
   transform: rotate(-90deg);
 }
+
 .ring-bg {
   fill: none;
   stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 4;
 }
-[data-theme='light'] .ring-bg {
-  stroke: rgba(0, 0, 0, 0.1);
-}
+
 .ring-fill {
   fill: none;
   stroke: var(--accent-color);
@@ -358,6 +322,7 @@ body {
   stroke-linecap: round;
   transition: stroke-dashoffset 0.5s ease-in-out;
 }
+
 .year-progress-ring span {
   font-size: 0.85rem;
   font-weight: 600;
@@ -380,9 +345,11 @@ body {
   flex-direction: column;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
 }
+
 .sidebar.open {
   right: 0;
 }
+
 .sidebar h2 {
   margin: 0 0 16px 0;
   font-size: 1.5rem;
@@ -391,26 +358,30 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 }
+
 .sidebar h3 {
   font-size: 1rem;
   color: var(--text-secondary);
   margin-bottom: 24px;
 }
+
 .sidebar textarea {
   width: 100%;
   height: 150px;
-  background: rgba(0,0,0,0.3);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 12px;
   color: white;
   resize: none;
   margin-top: 24px;
 }
+
 .sidebar textarea:focus {
   outline: none;
   border-color: var(--accent-color);
 }
+
 .sidebar-close {
   position: absolute;
   top: 16px;
@@ -432,11 +403,13 @@ body {
   border-bottom-color: rgba(255, 255, 255, 0.1) !important;
   fill: var(--text-primary) !important;
 }
+
 .react-flow__controls-button:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
+
 .sidebar-close:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
@@ -444,22 +417,29 @@ body {
 .react-flow__background-pattern {
   animation: bgPulse 8s ease-in-out infinite alternate;
 }
+
 @keyframes bgPulse {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.8; }
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
 }
 
 /* 6. Shortcuts Modal */
 .shortcuts-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .shortcuts-modal {
   width: 500px;
   max-width: 90vw;
@@ -467,18 +447,21 @@ body {
   border-radius: 16px;
   position: relative;
 }
+
 .shortcuts-modal h2 {
   margin-top: 0;
   margin-bottom: 24px;
 }
+
 .shortcut-row {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
 }
+
 .shortcut-key {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 6px 12px;
   border-radius: 6px;
   font-family: monospace;
@@ -488,6 +471,7 @@ body {
   min-width: 100px;
   text-align: center;
 }
+
 .shortcut-desc {
   color: var(--text-secondary);
 }

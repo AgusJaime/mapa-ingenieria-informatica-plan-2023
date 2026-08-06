@@ -1,19 +1,17 @@
 import React from 'react';
-import { Download, Eye, EyeOff, Wand2, HelpCircle, RefreshCcw, Sun, Moon } from 'lucide-react';
+import { Download, Eye, EyeOff, Wand2, HelpCircle, RefreshCcw } from 'lucide-react';
 
-export default function MapBottomBar({ 
-  subjectsData, 
-  userState, 
-  simulationState, 
-  simulationMode, 
+export default function MapBottomBar({
+  subjectsData,
+  userState,
+  simulationState,
+  simulationMode,
   setSimulationMode,
   showElectives,
   setShowElectives,
   showTransversals,
   setShowTransversals,
   setShowShortcuts,
-  isDarkMode,
-  setIsDarkMode,
   exportToExcel,
   resetPositions
 }) {
@@ -35,31 +33,31 @@ export default function MapBottomBar({
     })
     .map(s => parseFloat(userState[s.id]?.grade))
     .filter(g => !isNaN(g) && g >= 1 && g <= 10);
-    
+
   const sumGrades = validGrades.reduce((a, b) => a + b, 0);
   const promedio = validGrades.length > 0 ? (sumGrades / validGrades.length).toFixed(2) : 0;
 
   return (
-    <div className="bottom-bar glass">
+    <div className="bottom-bar">
       {/* Botones de Acción */}
       <div style={{ display: 'flex', gap: '12px' }}>
-        <button 
-          className="btn btn-secondary" 
-          onClick={() => setShowTransversals(!showTransversals)}
-        >
-          {showTransversals ? <EyeOff size={18} /> : <Eye size={18} />}
-          {showTransversals ? 'Ocultar Transversales' : 'Mostrar Transversales'}
-        </button>
-
-        <button 
-          className="btn btn-secondary" 
+        <button
+          className="btn btn-secondary"
           onClick={() => setShowElectives(!showElectives)}
         >
           {showElectives ? <EyeOff size={18} /> : <Eye size={18} />}
           {showElectives ? 'Ocultar Electivas' : 'Mostrar Electivas'}
         </button>
 
-        <button 
+        <button
+          className="btn btn-secondary"
+          onClick={() => setShowTransversals(!showTransversals)}
+        >
+          {showTransversals ? <EyeOff size={18} /> : <Eye size={18} />}
+          {showTransversals ? 'Ocultar Transversales' : 'Mostrar Transversales'}
+        </button>
+
+        <button
           className={`btn ${simulationMode ? 'btn-sim active' : 'btn-secondary'}`}
           onClick={() => setSimulationMode(!simulationMode)}
         >
@@ -67,7 +65,7 @@ export default function MapBottomBar({
           Modo Simulación
         </button>
 
-        <button 
+        <button
           className="btn btn-secondary"
           onMouseEnter={() => setShowShortcuts(true)}
           onMouseLeave={() => setShowShortcuts(false)}
@@ -75,21 +73,13 @@ export default function MapBottomBar({
           <HelpCircle size={18} />
           Atajos
         </button>
-        
-        <button 
-          className="btn btn-secondary" 
-          onClick={resetPositions} 
+
+        <button
+          className="btn btn-secondary"
+          onClick={resetPositions}
           title="Restaurar Posiciones"
         >
           <RefreshCcw size={18} />
-        </button>
-
-        <button 
-          className="btn btn-secondary" 
-          onClick={() => setIsDarkMode(!isDarkMode)} 
-          title={isDarkMode ? "Cambiar a Modo Claro" : "Cambiar a Modo Oscuro"}
-        >
-          {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
         </button>
       </div>
 
@@ -105,7 +95,7 @@ export default function MapBottomBar({
           <span className="stat-label">TÍTULO INTERMEDIO</span>
           <span className="stat-value">{pctIntermedio}%</span>
         </div>
-        
+
         <div className="stat-item" style={{ width: '180px' }}>
           <span className="stat-label">PROGRESO ({materiasCompletadas}/{totalMaterias})</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '4px' }}>
@@ -118,8 +108,8 @@ export default function MapBottomBar({
       </div>
 
       {/* Exportar */}
-      <button 
-        className="btn btn-primary" 
+      <button
+        className="btn btn-primary"
         onClick={exportToExcel}
         style={{ marginLeft: '12px' }}
       >
