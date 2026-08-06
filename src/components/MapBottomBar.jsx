@@ -43,18 +43,18 @@ export default function MapBottomBar({
       <div style={{ display: 'flex', gap: '12px' }}>
         <button 
           className="btn btn-secondary" 
-          onClick={() => setShowElectives(!showElectives)}
-        >
-          {showElectives ? <EyeOff size={18} /> : <Eye size={18} />}
-          {showElectives ? 'Ocultar Electivas' : 'Mostrar Electivas'}
-        </button>
-
-        <button 
-          className="btn btn-secondary" 
           onClick={() => setShowTransversals(!showTransversals)}
         >
           {showTransversals ? <EyeOff size={18} /> : <Eye size={18} />}
           {showTransversals ? 'Ocultar Transversales' : 'Mostrar Transversales'}
+        </button>
+
+        <button 
+          className="btn btn-secondary" 
+          onClick={() => setShowElectives(!showElectives)}
+        >
+          {showElectives ? <EyeOff size={18} /> : <Eye size={18} />}
+          {showElectives ? 'Ocultar Electivas' : 'Mostrar Electivas'}
         </button>
 
         <button 

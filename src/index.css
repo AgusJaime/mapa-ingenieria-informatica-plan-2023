@@ -76,7 +76,6 @@ body {
 
 .react-flow__node.highlighted .subject-node {
   box-shadow: 0 0 20px 2px rgba(34, 211, 238, 0.5);
-  border-color: #22d3ee !important;
   transform: scale(1.02);
 }
 
@@ -157,6 +156,10 @@ body {
   align-items: center;
   gap: 24px;
   z-index: 100;
+  background: rgba(24, 24, 27, 0.65) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn {
@@ -240,7 +243,6 @@ body {
 /* 2. Critical Path (Shift + Hover) */
 .react-flow__node.path-highlighted .subject-node {
   box-shadow: 0 0 25px 5px var(--path-glow-color, rgba(249, 115, 22, 0.7));
-  border-color: var(--path-color, #f97316) !important;
   transform: scale(1.05);
 }
 .react-flow__edge.path-highlighted .react-flow__edge-path {
