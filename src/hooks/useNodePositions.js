@@ -24,6 +24,7 @@ export function useNodePositions() {
   const resetPositions = useCallback(() => {
     localStorage.removeItem('unlam-positions');
     setPositionsState({});
+    positionsRef.current = {};
     setResetTrigger(prev => prev + 1);
     // Disparar evento para forzar recálculo
     window.dispatchEvent(new Event('storage'));

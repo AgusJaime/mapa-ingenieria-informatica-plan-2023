@@ -17,6 +17,28 @@
   --grad-disponible: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(56, 189, 248, 0.1));
   --grad-nodisponible: linear-gradient(135deg, rgba(100, 116, 139, 0.25), rgba(100, 116, 139, 0.08));
   --grad-simulada: linear-gradient(135deg, rgba(232, 121, 249, 0.35), rgba(232, 121, 249, 0.1));
+  
+  --edge-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='light'] {
+  --bg-color: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  
+  --edge-color: rgba(0, 0, 0, 0.25);
+  
+  --state-promocionada: #16a34a;
+  --state-cursada: #eab308;
+  --state-disponible: #0284c7;
+  --state-nodisponible: #94a3b8;
+  --state-simulada: #c026d3;
+  
+  --grad-promocionada: linear-gradient(135deg, rgba(22, 163, 74, 0.15), rgba(22, 163, 74, 0.05));
+  --grad-cursada: linear-gradient(135deg, rgba(234, 179, 8, 0.15), rgba(234, 179, 8, 0.05));
+  --grad-disponible: linear-gradient(135deg, rgba(2, 132, 199, 0.15), rgba(2, 132, 199, 0.05));
+  --grad-nodisponible: linear-gradient(135deg, rgba(148, 163, 184, 0.15), rgba(148, 163, 184, 0.05));
+  --grad-simulada: linear-gradient(135deg, rgba(192, 38, 211, 0.15), rgba(192, 38, 211, 0.05));
 }
 
 * {
@@ -38,8 +60,13 @@ body {
   background: rgba(24, 24, 27, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .glass {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 /* Node Styling */
@@ -165,10 +192,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+[data-theme='light'] .bottom-bar {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .btn {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  color: var(--text-primary);
   padding: 8px 16px;
   border-radius: 999px;
   cursor: pointer;
@@ -177,6 +209,11 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+[data-theme='light'] .btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
@@ -246,6 +283,10 @@ body {
   fill: rgba(255, 255, 255, 0.3);
 }
 
+[data-theme='light'] .react-flow__minimap-node {
+  fill: rgba(0, 0, 0, 0.2);
+}
+
 /* 2. Critical Path (Shift + Hover) */
 .react-flow__node.path-highlighted .subject-node {
   box-shadow: 0 0 25px 5px var(--path-glow-color, rgba(249, 115, 22, 0.7));
@@ -269,9 +310,15 @@ body {
   border-radius: 12px;
   z-index: 200;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.15);
   background: rgba(24, 24, 27, 0.95);
   pointer-events: none;
+}
+
+[data-theme='light'] .shortcuts-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 }
 
 @keyframes glowPulse {
@@ -313,6 +360,11 @@ body {
   fill: none;
   stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 4;
+}
+
+[data-theme='light'] .progress-bg,
+[data-theme='light'] .ring-bg {
+  stroke: rgba(0, 0, 0, 0.1);
 }
 
 .ring-fill {
