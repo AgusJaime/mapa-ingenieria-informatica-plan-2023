@@ -63,15 +63,4 @@ Si deseas descargar el código y correrlo en tu propia máquina para hacerle mod
 5. Abre el link que aparece en tu terminal (usualmente `http://localhost:5173`) en tu navegador web.
 
 ---
-
-## 🌐 Despliegue en Vercel
-
-Este proyecto está preparado para ser desplegado instantáneamente. Para subirlo a Vercel de manera gratuita:
-1. Sube tu código a un repositorio público en GitHub.
-2. Ingresa a [Vercel](https://vercel.com/) e inicia sesión con GitHub.
-3. Haz clic en "Add New Project", importa este repositorio, deja que Vercel detecte `Vite` automáticamente, y dale a **Deploy**.
-
-¡Y eso es todo! Tendrás un link público funcional en menos de un minuto.
-
----
 *Creado para facilitar la vida de los futuros ingenieros informáticos de la UNLaM.* 💻🎓
