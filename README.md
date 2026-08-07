@@ -18,7 +18,7 @@ Esta aplicación fue construida pensando en ofrecer una experiencia de usuario (
 * **🔮 Modo Simulación**: ¿Quieres saber qué pasaría si apruebas Análisis Matemático II? Activa el **Modo Simulación**, haz clic en materias (se teñirán de púrpura) y el grafo te mostrará qué rutas se te habilitan a futuro, ¡sin afectar tu progreso real guardado!
 * **🔥 Ruta Crítica (Shift + Hover)**: Mantén presionada la tecla `Shift` y pasa el ratón sobre cualquier materia avanzada. Se iluminará toda la cadena de requisitos hacia atrás hasta el primer año, utilizando un **gradiente de calor** (de naranja intenso a amarillo suave) indicando la profundidad o distancia de las materias.
 * **📊 Paneles de Progreso**: Visualiza tu avance con anillos circulares (`SVG`) por cada año de la carrera, así como tu porcentaje de Título Intermedio y promedio general.
-* **🗂️ Panel de Detalles y Notas**: Haz Doble Clic en cualquier materia para abrir un menú lateral deslizante. Allí verás los requisitos exactos y podrás guardar **anotaciones personales** (ej. tips del profesor, recordatorios).
+* **🗂️ Panel de Detalles y Notas**: Hace Clic Derecho en cualquier materia para abrir un menú lateral. Ahí verás los requisitos exactos y podrás guardar **anotaciones personales** (ej. tips del profesor, recordatorios).
 * **💾 Persistencia Local**: Todo tu progreso y tus notas se guardan automáticamente en tu navegador usando `localStorage`. No necesitas crearte una cuenta.
 * **📥 Exportación a Excel**: Exporta un reporte detallado de tu situación actual a un archivo `.xlsx` con un solo botón.
 
