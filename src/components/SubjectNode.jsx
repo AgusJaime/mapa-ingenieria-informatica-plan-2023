@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import { CheckCircle2, Circle, Clock, Ban, Star, Mail } from 'lucide-react';
+import { Star, Mail } from 'lucide-react';
 
 const STATE_COLORS = {
   promocionada: 'var(--state-promocionada)',
@@ -16,14 +16,6 @@ const STATE_GRADIENTS = {
   disponible: 'var(--grad-disponible)',
   nodisponible: 'var(--grad-nodisponible)',
   simulada: 'var(--grad-simulada)',
-};
-
-const STATE_ICONS = {
-  promocionada: <CheckCircle2 size={16} color="var(--state-promocionada)" />,
-  cursada: <Clock size={16} color="var(--state-cursada)" />,
-  disponible: <Circle size={16} color="var(--state-disponible)" />,
-  nodisponible: <Ban size={16} color="var(--state-nodisponible)" />,
-  simulada: <Clock size={16} color="var(--state-simulada)" />,
 };
 
 export default function SubjectNode({ data, selected }) {

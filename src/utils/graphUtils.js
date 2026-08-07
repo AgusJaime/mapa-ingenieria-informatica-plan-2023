@@ -71,7 +71,7 @@ export function calculateInitialLayout(subjects, showElectives, showTransversals
   return { nodes, edges };
 }
 
-export function calculateStatus(subject, userState, simulationState, subjectsData) {
+export function calculateStatus(subject, userState, simulationState) {
   if (simulationState && simulationState[subject.id]?.status) {
     return simulationState[subject.id].status;
   }

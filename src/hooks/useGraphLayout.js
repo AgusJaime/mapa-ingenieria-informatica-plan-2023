@@ -31,7 +31,7 @@ export function useGraphLayout({
         position: pos,
         data: {
           ...n.data,
-          status: calculateStatus(n.data.subject, userState, simulationState, subjectsData),
+          status: calculateStatus(n.data.subject, userState, simulationState),
           note: userState[n.id]?.note || ''
         }
       };
@@ -39,7 +39,7 @@ export function useGraphLayout({
     
     setNodes(configuredNodes);
     setEdges(initialEdges);
-  }, [showElectives, showTransversals, userState, simulationState, resetTrigger]);
+  }, [showElectives, showTransversals, userState, simulationState, resetTrigger, positionsRef, subjectsData]);
 
   // Update classes for highlighting
   useEffect(() => {
@@ -57,12 +57,21 @@ export function useGraphLayout({
       path.set(selectedNode, 0);
     }
 
+    const isSemesterLabelSelected = selectedNode.startsWith('sem-label-');
+    const selectedSemesterNum = isSemesterLabelSelected ? parseInt(selectedNode.replace('sem-label-', '')) : null;
+
     setNodes(nds => nds.map(n => {
       let isConnected = false;
       let isPath = false;
       let nodeStyles = { ...n.style };
 
-      if (shiftPressed) {
+      if (isSemesterLabelSelected) {
+        if (n.id === selectedNode) {
+          isConnected = true;
+        } else if (n.data?.subject?.semester === selectedSemesterNum) {
+          isConnected = true;
+        }
+      } else if (shiftPressed) {
         isPath = path.has(n.id);
         isConnected = isPath;
       } else {
@@ -110,7 +119,8 @@ export function useGraphLayout({
         style: edgeStyles
       };
     }));
-  }, [selectedNode, edges.length, shiftPressed]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedNode, edges.length, shiftPressed, subjectsData]);
 
   const onNodesChange = useCallback(
     (changes) => {

@@ -10,7 +10,7 @@ export default function SemesterLabelNode({ data }) {
 
   return (
     <div 
-      className="glass"
+      className="glass semester-label"
       style={{
         padding: '8px 12px',
         borderRadius: '8px',

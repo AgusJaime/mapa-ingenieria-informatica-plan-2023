@@ -1,13 +1,6 @@
 import React from 'react';
 
 export default function MapProgressRings({ subjectsData, userState, simulationState }) {
-  const totalMaterias = subjectsData.length;
-  const materiasCompletadas = subjectsData.filter(s => {
-    const st = simulationState[s.id]?.status || userState[s.id]?.status;
-    return st === 'promocionada' || st === 'simulada';
-  }).length;
-  const pctTotal = Math.round((materiasCompletadas / totalMaterias) * 100);
-
   return (
     <div className="year-progress-container glass">
       {[1, 2, 3, 4, 5].map(year => {

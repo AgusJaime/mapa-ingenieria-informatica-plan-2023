@@ -9,7 +9,6 @@ export function useMapState() {
   const [shiftPressed, setShiftPressed] = useState(false);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [selectedDetails, setSelectedDetails] = useState(null);
-  const [contextMenu, setContextMenu] = useState(null);
 
   // Clean simulation state when disabling mode
   useEffect(() => {
@@ -65,7 +64,6 @@ export function useMapState() {
     shiftPressed, setShiftPressed,
     showShortcuts, setShowShortcuts,
     selectedDetails, setSelectedDetails,
-    contextMenu, setContextMenu,
     userState, setUserState
   };
 }

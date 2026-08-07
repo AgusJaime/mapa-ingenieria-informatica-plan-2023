@@ -23,7 +23,6 @@ export default function MapCanvas({
   setSelectedNode,
   shiftPressed,
   setSelectedDetails,
-  setContextMenu,
   handleNodeClick,
   handleNodeContextMenu
 }) {
@@ -71,7 +70,6 @@ export default function MapCanvas({
 
   const onPaneClick = () => {
     setSelectedDetails(null);
-    setContextMenu(null);
   };
 
   return (

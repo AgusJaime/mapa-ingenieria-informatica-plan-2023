@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ReactFlowProvider } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { HelpCircle } from 'lucide-react';
 
 import MapCanvas from './components/MapCanvas';
 import MapSidebar from './components/MapSidebar';
@@ -22,7 +21,6 @@ function MainFlow() {
     shiftPressed,
     showShortcuts, setShowShortcuts,
     selectedDetails, setSelectedDetails,
-    contextMenu, setContextMenu,
     userState, setUserState
   } = useMapState();
 
@@ -81,33 +79,6 @@ function MainFlow() {
     setSelectedDetails(nodeId);
   };
 
-  const setNodeStatus = (status) => {
-    if (!contextMenu) return;
-    
-    if (simulationMode) {
-      setSimulationState(prev => {
-        const newState = { ...prev };
-        if (status === null) delete newState[contextMenu.nodeId];
-        else newState[contextMenu.nodeId] = { status: 'simulada' };
-        return newState;
-      });
-    } else {
-      setUserState(prev => {
-        const newState = { ...prev };
-        const updatedNodeState = { ...prev[contextMenu.nodeId] };
-        
-        if (status === null) delete updatedNodeState.status;
-        else updatedNodeState.status = status;
-        
-        if (Object.keys(updatedNodeState).length === 0) delete newState[contextMenu.nodeId];
-        else newState[contextMenu.nodeId] = updatedNodeState;
-        
-        localStorage.setItem('unlam-state', JSON.stringify(newState));
-        return newState;
-      });
-    }
-    setContextMenu(null);
-  };
 
   return (
     <>
@@ -125,7 +96,6 @@ function MainFlow() {
         setSelectedNode={setSelectedNode}
         shiftPressed={shiftPressed}
         setSelectedDetails={setSelectedDetails}
-        setContextMenu={setContextMenu}
         handleNodeClick={handleNodeClick}
         handleNodeContextMenu={handleNodeContextMenu}
       />
