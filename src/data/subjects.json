@@ -184,26 +184,6 @@
     "transversal": false
   },
   {
-    "id": "3680",
-    "name": "Taller de Integración",
-    "year": 2,
-    "semester": 3,
-    "correlatives": [
-      "3621",
-      "3623",
-      "3624",
-      "3625",
-      "3626",
-      "3630",
-      "3632",
-      "3638",
-      "3635",
-      "3636"
-    ],
-    "elective": false,
-    "transversal": false
-  },
-  {
     "id": "3676",
     "name": "Responsabilidad Social Universitaria",
     "year": 2,
@@ -242,6 +222,7 @@
     "year": 2,
     "semester": 4,
     "correlatives": [
+      "3635",
       "3636"
     ],
     "elective": false,
@@ -282,6 +263,26 @@
     "transversal": false
   },
   {
+    "id": "3680",
+    "name": "Taller de Integración",
+    "year": 2,
+    "semester": 4,
+    "correlatives": [
+      "3621",
+      "3623",
+      "3624",
+      "3625",
+      "3626",
+      "3630",
+      "3632",
+      "3638",
+      "3635",
+      "3636"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
     "id": "3645",
     "name": "Álgebra y Geometría Analítica II",
     "year": 3,
@@ -298,7 +299,7 @@
     "year": 3,
     "semester": 5,
     "correlatives": [
-      "3622",
+      "3633",
       "3640"
     ],
     "elective": false,
@@ -321,6 +322,7 @@
     "year": 3,
     "semester": 5,
     "correlatives": [
+      "3635",
       "3636",
       "3642"
     ],
@@ -333,6 +335,7 @@
     "year": 3,
     "semester": 5,
     "correlatives": [
+      "3629",
       "3638"
     ],
     "elective": false,
@@ -347,6 +350,19 @@
       "3635",
       "3638",
       "3643"
+    ],
+    "elective": false,
+    "transversal": false
+  },
+  {
+    "id": "3675",
+    "name": "Práctica Profesional Supervisada",
+    "year": 3,
+    "semester": 5,
+    "correlatives": [
+      "3636",
+      "3642",
+      "3640"
     ],
     "elective": false,
     "transversal": false
@@ -393,8 +409,7 @@
     "year": 3,
     "semester": 6,
     "correlatives": [
-      "3640",
-      "3645",
+      "3643",
       "3649"
     ],
     "elective": false,
@@ -417,7 +432,6 @@
     "year": 4,
     "semester": 7,
     "correlatives": [
-      "3641",
       "3651"
     ],
     "elective": false,
@@ -425,7 +439,7 @@
   },
   {
     "id": "3657",
-    "name": "Autómatas y Gramática",
+    "name": "Autómatas y Gramáticas",
     "year": 4,
     "semester": 7,
     "correlatives": [
@@ -569,23 +583,23 @@
   },
   {
     "id": "3669",
-    "name": "Ciencia de Datos",
+    "name": "Innovación y Emprendedorismo",
     "year": 5,
     "semester": 9,
     "correlatives": [
-      "3656",
-      "3664"
+      "3661"
     ],
     "elective": false,
     "transversal": false
   },
   {
     "id": "3670",
-    "name": "Innovación y Emprendedorismo",
+    "name": "Ciencia de Datos",
     "year": 5,
     "semester": 9,
     "correlatives": [
-      "3661"
+      "3656",
+      "3664"
     ],
     "elective": false,
     "transversal": false
@@ -605,7 +619,7 @@
     "transversal": false
   },
   {
-    "id": "E1",
+    "id": "3677",
     "name": "Lenguaje Orientado a Negocios",
     "year": 5,
     "semester": 9,
@@ -618,20 +632,7 @@
     "transversal": false
   },
   {
-    "id": "3675",
-    "name": "Práctica Profesional Supervisada",
-    "year": 3,
-    "semester": 6,
-    "correlatives": [
-      "3636",
-      "3642",
-      "3640"
-    ],
-    "elective": false,
-    "transversal": false
-  },
-  {
-    "id": "E2.1",
+    "id": "3678",
     "name": "Tecnologías en Seguridad",
     "year": 5,
     "semester": 10,
@@ -644,7 +645,7 @@
     "transversal": false
   },
   {
-    "id": "E2.2",
+    "id": "3599",
     "name": "Redes Móviles e IoT",
     "year": 5,
     "semester": 10,
@@ -657,7 +658,7 @@
     "transversal": false
   },
   {
-    "id": "E3",
+    "id": "3679",
     "name": "Visión Artificial",
     "year": 5,
     "semester": 10,
@@ -670,7 +671,7 @@
     "transversal": false
   },
   {
-    "id": "E4",
+    "id": "3886",
     "name": "Informática Biomédica y Tecnologías de la Salud",
     "year": 5,
     "semester": 10,
